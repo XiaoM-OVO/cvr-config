@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Dependencies
+node_modules/

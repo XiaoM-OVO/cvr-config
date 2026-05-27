@@ -1,0 +1,52 @@
+dns:
+  enable: true
+  listen: ':1053'
+  enhanced-mode: 'fake-ip'
+  fake-ip-range: '198.18.0.1/16'
+  fake-ip-filter-mode: 'blacklist'
+  prefer-h3: true
+  respect-rules: true
+  use-hosts: true
+  use-system-hosts: false
+  ipv6: false
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - '*.arpa'
+    - 'time.*.com'
+    - 'ntp.*.com'
+    - 'localhost.ptlogin2.qq.com'
+    - '*.msftncsi.com'
+    - 'www.msftconnecttest.com'
+    - 'google.cn'
+    - '+.music.163.com'
+    - '+.music.126.net'
+  default-nameserver:
+    - '223.5.5.5'
+    - '119.29.29.29'
+  nameserver:
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://doh.pub/dns-query'
+  direct-nameserver-follow-policy: false
+  fallback-filter:
+    geoip: true
+    geoip-code: 'CN'
+    ipcidr:
+      - '240.0.0.0/4'
+      - '0.0.0.0/32'
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+      - '+.githubusercontent.com'
+      - '+.googlevideo.com'
+      - '+.msftconnecttest.com'
+      - '+.msftncsi.com'
+  fallback:
+    - 'https://8.8.8.8/dns-query'
+    - 'https://1.1.1.1/dns-query'
+    - 'https://dns.google/dns-query'
+  proxy-server-nameserver:
+    - 'https://dns.alidns.com/dns-query'
+    - 'https://doh.pub/dns-query'
+  direct-nameserver: []
